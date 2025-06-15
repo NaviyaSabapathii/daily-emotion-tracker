@@ -19,4 +19,7 @@ HOW TO RUN:
 --Clone the repository
 --Open index.html in a browser.
 
+Developed by
+Naviya S.
+
 

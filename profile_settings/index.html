@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Emotional Journal | Profile Settings</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for additional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <div class="col-lg-3 sidebar">
+                <div class="logo-container">
+                    <h2>Emote<span>Journal</span> <i class="fas fa-journal-whills"></i></h2>
+                </div>
+                <div class="profile-avatar">
+                    <div class="avatar-circle">
+                        <img src="https://via.placeholder.com/150" alt="Profile Avatar" id="profileAvatar">
+                        <div class="avatar-overlay">
+                            <label for="avatarUpload" class="upload-icon">
+                                <i class="fas fa-camera"></i>
+                            </label>
+                            <input type="file" id="avatarUpload" class="d-none">
+                        </div>
+                    </div>
+                    <h4 id="userNameDisplay">Sarah Johnson</h4>
+                    <p class="mood-status" id="moodStatusDisplay">Feeling Optimistic Today 😊</p>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link"><i class="fas fa-book"></i> Journal</a>
+                    <a href="#" class="nav-link"><i class="fas fa-chart-line"></i> Insights</a>
+                    <a href="#" class="nav-link active"><i class="fas fa-user-cog"></i> Profile Settings</a>
+                    <a href="#" class="nav-link"><i class="fas fa-palette"></i> Themes</a>
+                    <a href="#" class="nav-link"><i class="fas fa-bell"></i> Notifications</a>
+                    <a href="#" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+                <div class="emotional-quote">
+                    <p>"Self-reflection is the gateway to emotional intelligence."</p>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-lg-9 main-content">
+                <div class="settings-header">
+                    <h1><i class="fas fa-sparkles"></i> Profile Settings</h1>
+                    <p>Tell us about yourself, and we'll tailor your journal experience accordingly</p>
+                </div>
+
+                <div class="mood-tracker-banner">
+                    <div class="mood-prompt">
+                        <h4>How are you feeling today? <span class="mood-emoji">😊</span></h4>
+                        <div class="mood-slider">
+                            <input type="range" class="form-range" min="1" max="5" step="1" id="moodRange" value="4">
+                            <div class="mood-labels">
+                                <span>😔</span>
+                                <span>😐</span>
+                                <span>🙂</span>
+                                <span>😊</span>
+                                <span>😁</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="settings-card personal-info">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-user-circle"></i> Personal Details</h3>
+                                    <p>Help us get to know you better</p>
+                                </div>
+                                <div class="card-body">
+                                    <form id="personalInfoForm">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="fullName" placeholder="Your Name" value="Sarah Johnson">
+                                            <label for="fullName">Full Name</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="email" placeholder="your@email.com" value="sarah.j@example.com">
+                                            <label for="email">Email Address</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="pronouns">
+                                                <option value="she/her" selected>She/Her</option>
+                                                <option value="he/him">He/Him</option>
+                                                <option value="they/them">They/Them</option>
+                                                <option value="custom">Custom</option>
+                                            </select>
+                                            <label for="pronouns">Preferred Pronouns</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="date" class="form-control" id="birthday" value="1995-05-15">
+                                            <label for="birthday">Birthday</label>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="aboutMe" class="form-label">About Me</label>
+                                            <textarea class="form-control" id="aboutMe" rows="3" placeholder="Tell us a bit about yourself...">I'm a creative soul who loves hiking, photography, and mindfulness practices. Looking to track my emotional journey!</textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="settings-card emotional-profile">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-heart-pulse"></i> Emotional Profile</h3>
+                                    <p>Customize your emotional tracking experience</p>
+                                </div>
+                                <div class="card-body">
+                                    <form id="emotionalProfileForm">
+                                        <div class="mb-4">
+                                            <label class="form-label">What are your emotional goals? <span class="text-muted">(Select all that apply)</span></label>
+                                            <div class="emotion-goals">
+                                                <div class="emotion-goal-item" data-goal="emotional-balance">
+                                                    <i class="fas fa-balance-scale"></i>
+                                                    <span>Emotional Balance</span>
+                                                </div>
+                                                <div class="emotion-goal-item" data-goal="better-relationships">
+                                                    <i class="fas fa-handshake"></i>
+                                                    <span>Better Relationships</span>
+                                                </div>
+                                                <div class="emotion-goal-item" data-goal="self-awareness">
+                                                    <i class="fas fa-brain"></i>
+                                                    <span>Self-Awareness</span>
+                                                </div>
+                                                <div class="emotion-goal-item" data-goal="stress-management">
+                                                    <i class="fas fa-shield-heart"></i>
+                                                    <span>Stress Management</span>
+                                                </div>
+                                                <div class="emotion-goal-item" data-goal="increased-happiness">
+                                                    <i class="fas fa-smile-beam"></i>
+                                                    <span>Increased Happiness</span>
+                                                </div>
+                                                <div class="emotion-goal-item" data-goal="custom">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                    <span>Custom Goal</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label">Journal Reminders</label>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" id="morningCheck" checked>
+                                                <label class="form-check-label" for="morningCheck">Morning Reflection 🌅</label>
+                                            </div>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" id="eveningCheck" checked>
+                                                <label class="form-check-label" for="eveningCheck">Evening Reflection 🌙</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="moodSwingsCheck">
+                                                <label class="form-check-label" for="moodSwingsCheck">Mood Swing Alerts ⚠️</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="settings-card privacy-settings">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-lock"></i> Privacy</h3>
+                                    <p>Control how your data is used</p>
+                                </div>
+                                <div class="card-body">
+                                    <form id="privacyForm">
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="dataShareCheck" checked>
+                                            <label class="form-check-label" for="dataShareCheck">
+                                                Anonymized data for improving AI (no personal details)
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" id="backupCheck" checked>
+                                            <label class="form-check-label" for="backupCheck">
+                                                Automatic cloud backup
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons mt-4">
+                        <button type="button" class="btn btn-cancel" id="cancelBtn">Cancel</button>
+                        <button type="button" class="btn btn-save" id="saveBtn">Save Changes <i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="advanced-settings-toggle">
+                        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#advancedSettings">
+                            Advanced Settings <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="collapse" id="advancedSettings">
+                        <div class="advanced-settings-container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="settings-card">
+                                        <div class="card-header">
+                                            <h3><i class="fas fa-brain"></i> Journal Customization</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <label class="form-label">Journal Tone Suggestions</label>
+                                                <select class="form-select" id="journalTone">
+                                                    <option value="supportive" selected>Supportive & Gentle</option>
+                                                    <option value="analytical">Analytical & Insightful</option>
+                                                    <option value="motivational">Motivational & Energetic</option>
+                                                    <option value="none">No Suggestions</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Emotional Vocabulary Level</label>
+                                                <div class="range-with-labels">
+                                                    <input type="range" class="form-range" min="1" max="3" step="1" id="vocabularyRange" value="2">
+                                                    <div class="range-labels">
+                                                        <span>Basic</span>
+                                                        <span>Intermediate</span>
+                                                        <span>Advanced</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="settings-card">
+                                        <div class="card-header">
+                                            <h3><i class="fas fa-sliders"></i> Data Management</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <label class="form-label">Data Retention</label>
+                                                <select class="form-select" id="dataRetention">
+                                                    <option value="indefinite" selected>Keep Indefinitely</option>
+                                                    <option value="1year">1 Year</option>
+                                                    <option value="6months">6 Months</option>
+                                                    <option value="3months">3 Months</option>
+                                                </select>
+                                            </div>
+                                            <div class="export-options mt-4">
+                                                <button class="btn btn-outline-secondary btn-sm">
+                                                    <i class="fas fa-download"></i> Export All Data
+                                                </button>
+                                                <button class="btn btn-outline-danger btn-sm ms-2">
+                                                    <i class="fas fa-trash"></i> Delete Account
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all the form elements
+            const fullNameInput = document.getElementById('fullName');
+            const moodRange = document.getElementById('moodRange');
+            const moodEmoji = document.querySelector('.mood-emoji');
+            const moodStatusDisplay = document.getElementById('moodStatusDisplay');
+            const userNameDisplay = document.getElementById('userNameDisplay');
+            const avatarUpload = document.getElementById('avatarUpload');
+            const profileAvatar = document.getElementById('profileAvatar');
+            const saveBtn = document.getElementById('saveBtn');
+            const cancelBtn = document.getElementById('cancelBtn');
+            
+            // Original values for cancel functionality
+            const originalValues = {
+                fullName: fullNameInput.value,
+                moodValue: moodRange.value
+            };
+            
+            // Update mood emoji when slider changes
+            const emojis = ['😔', '😐', '🙂', '😊', '😁'];
+            const moodDescriptions = ['Feeling Down Today ', 'Feeling Neutral Today ', 'Feeling Good Today ', 'Feeling Optimistic Today ', 'Feeling Excellent Today '];
+            
+            moodRange.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                moodEmoji.textContent = emojis[value-1];
+                // Update current mood display immediately for better user experience
+                moodStatusDisplay.textContent = moodDescriptions[value-1] + emojis[value-1];
+            });
+            
+            // Make emotion goals toggleable
+            const emotionGoals = document.querySelectorAll('.emotion-goal-item');
+            emotionGoals.forEach(goal => {
+                goal.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+            
+            // Pre-select some goals
+            document.querySelector('[data-goal="emotional-balance"]').classList.add('active');
+            document.querySelector('[data-goal="self-awareness"]').classList.add('active');
+            document.querySelector('[data-goal="increased-happiness"]').classList.add('active');
+            
+            // Handle avatar upload
+            avatarUpload.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profileAvatar.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Save button functionality
+            saveBtn.addEventListener('click', function() {
+                // Update the profile name
+                userNameDisplay.textContent = fullNameInput.value;
+                
+                // Update the mood status
+                const moodValue = parseInt(moodRange.value);
+                moodStatusDisplay.textContent = moodDescriptions[moodValue-1] + emojis[moodValue-1];
+                
+                // Update original values
+                originalValues.fullName = fullNameInput.value;
+                originalValues.moodValue = moodValue;
+                
+                // Show confirmation
+                const toast = document.createElement('div');
+                toast.classList.add('toast-notification', 'show');
+                toast.textContent = 'Changes saved successfully!';
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(toast);
+                    }, 300);
+                }, 3000);
+            });
+            
+            // Cancel button functionality
+            cancelBtn.addEventListener('click', function() {
+                // Restore original values
+                fullNameInput.value = originalValues.fullName;
+                moodRange.value = originalValues.moodValue;
+                
+                // Update mood emoji
+                moodEmoji.textContent = emojis[originalValues.moodValue-1];
+                
+                // Show confirmation
+                const toast = document.createElement('div');
+                toast.classList.add('toast-notification', 'show', 'cancel');
+                toast.textContent = 'Changes cancelled!';
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(toast);
+                    }, 300);
+                }, 3000);
+            });
+        });
+    </script>
+    <script>
+        // Add this to your existing JavaScript, inside the DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    // ... your existing code ...
+    
+    // Get the export data button
+    const exportDataBtn = document.querySelector('.export-options button:first-child');
+    
+    // Add click event listener to the export data button
+    exportDataBtn.addEventListener('click', function() {
+        // Gather all user data from the forms
+        const userData = {
+            personalInfo: {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                pronouns: document.getElementById('pronouns').value,
+                birthday: document.getElementById('birthday').value,
+                aboutMe: document.getElementById('aboutMe').value
+            },
+            emotionalProfile: {
+                currentMood: document.getElementById('moodRange').value,
+                emotionalGoals: Array.from(document.querySelectorAll('.emotion-goal-item.active')).map(goal => goal.dataset.goal),
+                journalReminders: {
+                    morningReflection: document.getElementById('morningCheck').checked,
+                    eveningReflection: document.getElementById('eveningCheck').checked,
+                    moodSwingAlerts: document.getElementById('moodSwingsCheck').checked
+                }
+            },
+            privacySettings: {
+                shareAnonymizedData: document.getElementById('dataShareCheck').checked,
+                automaticBackup: document.getElementById('backupCheck').checked
+            },
+            advancedSettings: {
+                journalTone: document.getElementById('journalTone').value,
+                emotionalVocabularyLevel: document.getElementById('vocabularyRange').value,
+                dataRetention: document.getElementById('dataRetention').value
+            }
+        };
+        
+        // Convert userData object to a JSON string with nice formatting
+        const dataStr = JSON.stringify(userData, null, 2);
+        
+        // Create a Blob containing the data
+        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+        
+        // Create a URL for the Blob
+        const dataUrl = URL.createObjectURL(dataBlob);
+        
+        // Create a download link and trigger the download
+        const downloadLink = document.createElement('a');
+        downloadLink.href = dataUrl;
+        downloadLink.download = `emotejournal_data_${new Date().toISOString().split('T')[0]}.json`;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        
+        // Clean up by revoking the URL
+        URL.revokeObjectURL(dataUrl);
+        
+        // Show confirmation toast
+        const toast = document.createElement('div');
+        toast.classList.add('toast-notification', 'show');
+        toast.textContent = 'Data exported successfully!';
+        document.body.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 300);
+        }, 3000);
+    });
+    
+    // Also add functionality for the Delete Account button
+    const deleteAccountBtn = document.querySelector('.export-options button:last-child');
+    
+    deleteAccountBtn.addEventListener('click', function() {
+        // Create a confirmation dialog
+        if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+            // Here you would typically send a request to your backend to delete the account
+            // For this demo, we'll just show a toast notification
+            const toast = document.createElement('div');
+            toast.classList.add('toast-notification', 'show', 'cancel');
+            toast.textContent = 'Account deletion initiated. You will be logged out shortly.';
+            document.body.appendChild(toast);
+            
+            // Simulate logout after 3 seconds
+            setTimeout(() => {
+                window.location.href = '#'; // In a real app, redirect to logout page
+            }, 3000);
+        }
+    });
+});
+    </script>
+</body>
+</html>
